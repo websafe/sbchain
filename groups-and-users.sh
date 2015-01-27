@@ -24,10 +24,13 @@
 
 ## -----------------------------------------------------------------------------
 
+# See http://slackbuilds.org/uid_gid.txt for recommended UID/GIDs.
+
 #
 set -e
 
 # PostgreSQL
+# http://slackbuilds.org/repository/14.1/system/postgresql/
 if ! grep -q ^postgres: /etc/group; then
   groupadd -g 209 postgres
 fi
@@ -36,6 +39,7 @@ if ! grep -q ^postgres: /etc/passwd; then
 fi
 
 # Dovecot
+# http://slackbuilds.org/repository/14.1/network/dovecot/
 if ! grep -q ^dovecot: /etc/group; then
   groupadd -g 202 dovecot
 fi
@@ -50,6 +54,7 @@ if ! grep -q ^dovenull: /etc/passwd; then
 fi
 
 # Postfix
+# http://slackbuilds.org/repository/14.1/network/postfix/
 if ! grep -q ^postfix: /etc/group; then
   groupadd -g 200 postfix
 fi
@@ -61,6 +66,7 @@ if ! grep -q ^postfix: /etc/passwd; then
 fi
 
 # ClamAV
+# http://slackbuilds.org/repository/14.1/system/clamav/
 if ! grep -q ^clamav: /etc/group; then
   groupadd -g 210 clamav
 fi
@@ -69,6 +75,7 @@ if ! grep -q ^clamav: /etc/passwd; then
 fi
 
 # davfs2
+# http://slackbuilds.org/repository/14.1/system/davfs2/
 if ! grep -q ^davfs2: /etc/group; then
   groupadd -g 230 davfs2
 fi
